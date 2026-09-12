@@ -12,7 +12,14 @@
  */
 export function echo(word, n) {
   // TODO
+  let result = "";
+  for (let i = 0; i < n; i++) {
+    result += word;
+  }
+  return result;
 }
+
+console.log(echo("hello", 4));
 
 /**
  * @param {string} word - The word to repeat.
@@ -28,7 +35,13 @@ export function echo(word, n) {
  */
 export function echoWithSpace(word, n) {
   // TODO
+  let result = "";
+  for (let i = 0; i < n; i++) {
+    result += word + " ";
+  }
+  return result.trim();
 }
+console.log(echoWithSpace("matt", 4));
 
 /**
  * @param {number} n - The number to stop at
@@ -43,8 +56,15 @@ export function echoWithSpace(word, n) {
  */
 export function sumTo(n) {
   // TODO
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+    sum += i;
+  }
+  return sum;
 }
-
+console.log(sumTo(3));
+console.log(sumTo(5));
+console.log(sumTo(0));
 /**
  * @param {number} a - The starting integer.
  * @param {number} z - The ending integer.
