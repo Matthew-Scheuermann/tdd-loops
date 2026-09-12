@@ -19,7 +19,7 @@ export function echo(word, n) {
   return result;
 }
 
-console.log(echo("hello", 4));
+// console.log(echo("hello", 4));
 
 /**
  * @param {string} word - The word to repeat.
@@ -41,7 +41,7 @@ export function echoWithSpace(word, n) {
   }
   return result.trim();
 }
-console.log(echoWithSpace("matt", 4));
+// console.log(echoWithSpace("matt", 4));
 
 /**
  * @param {number} n - The number to stop at
@@ -62,9 +62,9 @@ export function sumTo(n) {
   }
   return sum;
 }
-console.log(sumTo(3));
-console.log(sumTo(5));
-console.log(sumTo(0));
+// console.log(sumTo(3));
+// console.log(sumTo(5));
+// console.log(sumTo(0));
 /**
  * @param {number} a - The starting integer.
  * @param {number} z - The ending integer.
@@ -79,7 +79,14 @@ console.log(sumTo(0));
  */
 export function sumFromTo(a, z) {
   // TODO
+  let sum = 0;
+  for (let i = a; i <= z; i++) {
+    sum += i;
+  }
+  return sum;
 }
+// console.log(sumFromTo(3, 2)); // 0
+// console.log(sumFromTo(-2, 4)); // -2 + -1 + 0 + 1 + 2 + 3 + 4 = 7
 
 /**
  * Counts down from n to 1, inclusive, by logging each number to the console.
@@ -94,7 +101,12 @@ export function sumFromTo(a, z) {
  */
 export function countdown(n) {
   // TODO
+  for (let i = n; i >= 1; i--) {
+    console.log(i);
+  }
 }
+//console.log(countdown(3)); //3 2 1
+// console.log(countdown(0));
 
 /**
  * @param {number} n - The ending number.
@@ -109,7 +121,15 @@ export function countdown(n) {
  */
 export function sumOddsToN(n) {
   // TODO
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+    if (i % 2 === 1) {
+      sum += i;
+    }
+  }
+  return sum;
 }
+// console.log(sumOddsToN(5)); // 1 + 3 + 5 = 9
 
 /**
  * A petri dish starts with a certain number of bacteria cells.
