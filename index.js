@@ -149,7 +149,16 @@ export function sumOddsToN(n) {
  */
 export function getGrowthTime(start, target) {
   // TODO
+  if (start <= 0) {
+    return undefined;
+  }
+  let count = 0;
+  for (; start < target; start *= 2) {
+    count++;
+  }
+  return count * 20;
 }
+// console.log(getGrowthTime(1, 8)); 1 * 2 = 2 * 2 = 4 * 2 = 8 --> 3 * 20 = 60
 
 /**
  * The amount of money in a savings account grows by a certain rate every year.
@@ -169,7 +178,16 @@ export function getGrowthTime(start, target) {
  */
 export function getCompoundTime(start, rate, target) {
   // TODO
+  if (start <= 0 || rate <= 0) {
+    return undefined;
+  }
+  let count = 0;
+  for (; start < target; start *= 1 + rate) {
+    count++;
+  }
+  return count;
 }
+// console.log(getCompoundTime(100, 0.1, 200)); // 100 * (1 + .10) this would run 8 times before surpassing 200
 
 /**
  * An empty bucket sits some distance away from a water faucet.
