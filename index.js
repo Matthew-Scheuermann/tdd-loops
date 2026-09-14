@@ -213,7 +213,28 @@ export function getCompoundTime(start, rate, target) {
  */
 export function moveWater(colander, bucket) {
   // TODO
+  if (colander <= 0) {
+    return undefined;
+  }
+  if (bucket <= 0) {
+    return 0;
+  }
+
+  let totalCupsDelivered = 0;
+  let capacity = colander;
+  let trips = 0;
+
+  for (; totalCupsDelivered < bucket; capacity -= 1) {
+    if (capacity < 1) {
+      capacity = 1;
+    }
+    totalCupsDelivered += capacity;
+    trips++;
+  }
+  return trips;
 }
+// console.log(moveWater(3, 6)); // 3 2 1 = 6 ( 3 trips)
+// console.log(moveWater(5, 18)); // 5 + 4 + 3 + 2 + 1 + 1 + 1 + 1 = 18 (8)
 
 /**
  * This is a classic interview question! :)
@@ -233,4 +254,15 @@ export function moveWater(colander, bucket) {
  */
 export function fizzbuzz(n) {
   // TODO
+  for (let i = 1; i <= n; i++) {
+    // content
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("fizzbuzz");
+    } else if (i % 3 === 0) {
+      console.log("fizz");
+    } else if (i % 5 === 0) {
+      console.log("buzz");
+    } else console.log(i);
+  }
 }
+console.log(fizzbuzz(15));
